@@ -1,0 +1,40 @@
+<h1>sustainable energy</h1>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="products">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.index }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<input [(ngModel)]="coin" placeholder="Coin Value">
+<button class="btn btn-primary" (click)="addCoin()">Add Coin</button>
+<br />
+<button class="btn btn-primary" (click)="refund()">Return Coins</button>
+<br />
+<input [(ngModel)]="product" placeholder="Product Id">
+<button class="btn btn-primary" (click)="buy()">Buy</button>
+<p aria-live="polite">Message: <strong>{{ message }}</strong></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="coins">
+  <thead>
+    <tr>
+      <th>Coin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coin of coins">
+      <td>{{ coin.value }}</td>
+    </tr>
+  </tbody>
+</table>
